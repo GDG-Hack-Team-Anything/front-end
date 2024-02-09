@@ -8,9 +8,10 @@ import JudgeLayout from './Components/Pages/Judge/JudgeLayout';
 import AuthenticatedLayout from './Components/Pages/Authenticated/AuthenticatedLayout';
 import Home from './Components/Pages/Home/Home';
 
+import EventCards from "./Components/Pages/Admin/Pages/EventsCards"
+
+
 export const Context = createContext()
-
-
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
             {/* Admin routes */}
           {isAdmin && (
             <Route element={<AdminLayout />} path="/admin">
-              
+                <Route element={<EventCards />} path='events' />
             </Route>
           )}
 
