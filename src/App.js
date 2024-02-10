@@ -25,10 +25,10 @@ function App() {
   
   
   const [auth ,setAuth] = useState({
-    isAdmin:1,
-    isJudge:1,
-    isParticipant:1,
-    isCompany:1
+    isAdmin:0,
+    isJudge:0,
+    isParticipant:0,
+    isCompany:0
   })
 
   const { isAdmin,isJudge,isParticipant , isCompany } = auth

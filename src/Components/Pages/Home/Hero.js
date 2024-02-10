@@ -1,17 +1,38 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from "react-router-dom";
-
+import { Context } from '../../../App';
 
 export const Hero = () => {
+
+
+    const [auth ,setAuth] = useContext(Context)
     const navigate = useNavigate()
+
+
+
+
     const handleClick = () => {
         navigate("/admin/events")
     }
 
+
+
     const redirectAdmin =()=>{
+        setAuth({
+            isAdmin:1,
+            isJudge:0,
+            isParticipant:0,
+            isCompany:0
+          })
         navigate("/admin/events")
     }
     const redirectParticipant =()=>{
+        setAuth({
+            isAdmin:0,
+            isJudge:0,
+            isParticipant:1,
+            isCompany:0
+          })
         navigate('/participant/events')
     }
 
